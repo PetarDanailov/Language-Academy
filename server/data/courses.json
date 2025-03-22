@@ -1,0 +1,80 @@
+{
+  "courses": {
+    "course-uuid-1": {
+      "title": "Spanish for Beginners",
+      "language": "Spanish",
+      "duration": "10 weeks",
+      "price": 149.99,
+      "description": "Learn the basics of Spanish, including pronunciation, grammar, and common phrases.",
+      "imageUrl": "https://www.lawlessspanish.com/wp-content/uploads/spanish-for-beginners.png",
+      "startingDate": "2024-05-01T00:00:00Z",
+      "vacantSpaces": 20,
+      "address": "789 Language Street, Barcelona",
+      "reviews": {
+        "review-uuid-3": {
+          "userId": "user-uuid-3",
+          "rating": 5,
+          "reviewDate": "2024-05-15T10:30:00Z",
+          "comment": "Great course! The interactive lessons helped a lot."
+        }
+      }
+    },
+    "course-uuid-2": {
+      "title": "Business English Mastery",
+      "language": "English",
+      "duration": "12 weeks",
+      "price": 199.99,
+      "description": "Enhance your professional English skills for meetings, presentations, and emails.",
+      "imageUrl": "https://m.media-amazon.com/images/I/61-rOlet4DL._AC_UF1000,1000_QL80_.jpg",
+      "startingDate": "2024-06-01T00:00:00Z",
+      "vacantSpaces": 25,
+      "address": "123 Corporate Avenue, London",
+      "reviews": {
+        "review-uuid-4": {
+          "userId": "user-uuid-4",
+          "rating": 4,
+          "reviewDate": "2024-06-10T09:00:00Z",
+          "comment": "Very useful for my job! More role-playing exercises would be great."
+        }
+      }
+    },
+    "course-uuid-3": {
+      "title": "Mandarin Chinese Essentials",
+      "language": "Chinese",
+      "duration": "8 weeks",
+      "price": 179.99,
+      "description": "Learn essential Mandarin Chinese phrases and characters for everyday conversations.",
+      "imageUrl": "https://m.media-amazon.com/images/I/61qSkRjJYuL._AC_UF894,1000_QL80_.jpg",
+      "startingDate": "2024-07-01T00:00:00Z",
+      "vacantSpaces": 18,
+      "address": "456 Culture Square, Beijing",
+      "reviews": {
+        "review-uuid-5": {
+          "userId": "user-uuid-5",
+          "rating": 5,
+          "reviewDate": "2024-07-15T14:45:00Z",
+          "comment": "A fantastic introduction to Mandarin! I can already hold basic conversations."
+        }
+      }
+    },
+    "course-uuid-4": {
+      "title": "French for Travelers",
+      "language": "French",
+      "duration": "6 weeks",
+      "price": 129.99,
+      "description": "Master essential French phrases and cultural tips for travel and tourism.",
+      "imageUrl": "https://m.media-amazon.com/images/I/71PaJ7nCJiL._AC_UF1000,1000_QL80_.jpg",
+      "startingDate": "2024-08-01T00:00:00Z",
+      "vacantSpaces": 15,
+      "address": "101 Rue de Paris, France",
+      "reviews": {
+        "review-uuid-6": {
+          "userId": "user-uuid-6",
+          "rating": 4,
+          "reviewDate": "2024-08-10T11:20:00Z",
+          "comment": "Helpful for my trip to France! Would love more speaking practice."
+        }
+      }
+    }
+  }
+}
