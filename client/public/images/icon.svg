@@ -1,0 +1,23 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle background -->
+  <circle cx="50" cy="50" r="48" fill="#2C3E50" stroke="#ffffff" stroke-width="4"/>
+  
+  <!-- Open book pages (left and right) -->
+  <path d="M35,40 L35,70 L50,60 L50,40 Z" fill="#ECF0F1"/>
+  <path d="M50,40 L50,60 L65,70 L65,40 Z" fill="#ECF0F1"/>
+  
+  <!-- Book fold detail -->
+  <line x1="50" y1="40" x2="50" y2="60" stroke="#BDC3C7" stroke-width="1"/>
+  
+  <!-- Optional text: You can remove or modify these if you prefer a pure icon -->
+  <text x="50" y="32" font-size="8" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif">
+    Language
+  </text>
+  <text x="50" y="88" font-size="8" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif">
+    Academy
+  </text>
+</svg>
+
+
+
+ 
