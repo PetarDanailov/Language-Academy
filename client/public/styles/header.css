@@ -5,10 +5,14 @@ body{
 .navbar {
   width: 100%;
   background-color: #1e293b; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Darker shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
-
+.flex-container {
+  display: flex;          
+  align-items: center;    
+  gap: 16px;              
+}
 .navbar-inner {
   margin: 0 auto;
   padding:  24px;
@@ -33,7 +37,7 @@ body{
   transform: translateX(-50%);
   display: flex;
   gap: 32px;
- margin-bottom: 10px;
+ margin-top: 30px;
 }
 
 .navbar-link {
@@ -57,6 +61,7 @@ body{
   border-radius: 8px;
   font-size: 1.125rem;
   font-weight: 600;
+  margin-top: 10px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -71,6 +76,7 @@ body{
   transform: translateY(-2px); 
 }
 .signin-button {
+  margin-top: 10px;
   background-color: #facc15; 
   color: #1e293b; 
   padding: 8px 20px;

@@ -3,7 +3,7 @@ import {Link} from "react-router"
 export default function Header(){
   return( <nav className="navbar">
     <div className="navbar-inner">
-      <div className="flex items-center space-x-4">
+      <div className="flex-container">
       <Link to="/" className="navbar-logo" ><img src="../../../public/images/icon.svg" className="navbar-icon"/>Language Academy</Link>
 
         
