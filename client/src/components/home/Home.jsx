@@ -38,7 +38,7 @@ export default function Home(){
               <img src={course.image} alt={course.title} className="course-image" />
               <div className="course-info">
                 <h3>{course.title}</h3>
-                <p><strong>language:</strong> {course.language}</p>
+                <p>Language: {course.language}</p>
                 <p><strong>Vacant spaces:</strong> {course.vacantSpaces}</p>
               </div>
             </div>
