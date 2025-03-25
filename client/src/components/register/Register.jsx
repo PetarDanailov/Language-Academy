@@ -1,4 +1,30 @@
+import { useNavigate } from "react-router";
+import { useRegister } from "../../api/authApi";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+
 export default function Register() {
+  const navigate = useNavigate();
+  const register = useRegister();
+  const {setUser} = useContext(UserContext)
+  const registerHandler = async (formData) =>{
+    const {email,firstName,lastName,password,repeatPassword} = Object.fromEntries(formData);
+      if(!email || !firstName ||!lastName ||!password ||!repeatPassword){
+       return alert("Please fill all the fields");
+      }
+      if(password !== repeatPassword){
+        return alert("Passwords do no match");
+      }
+      const username = firstName + " " + lastName;
+      try{
+        const result = await register(email,password,username);
+        setUser(result);
+        navigate('/courses')
+      }
+      catch(err){
+        alert("Registration failed please try again.")
+      } 
+  }
   return (
     <div className="register-container">
       <div className="quote-box">
@@ -8,38 +34,38 @@ export default function Register() {
         </p>
       </div>
       <div className="register-box">
-        <form id="registerForm" method="post">
+        <form id="registerForm" action={registerHandler}>
           <h1 className="register-title">Register</h1>
           <hr />
           <div className="register-error" role="alert"></div>
 
           <div className="containers">
             <label className="register-label">Email</label>
-            <input type="email" className="register-input" placeholder="name@example.com" />
+            <input type="email" className="register-input"  name="email" placeholder="name@example.com" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">First Name</label>
-            <input type="text" className="register-input" placeholder="First name" />
+            <input type="text" className="register-input"  name="firstName" placeholder="First name" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">Last Name</label>
-            <input type="text" className="register-input" placeholder="Last name" />
+            <input type="text" className="register-input"  name="lastName" placeholder="Last name" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">Password</label>
-            <input type="password" className="register-input" placeholder="Password" />
+            <input type="password" className="register-input"  name="password" placeholder="Password" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">Confirm Password</label>
-            <input type="password" className="register-input" placeholder="Confirm password" />
+            <input type="password" className="register-input"   name="repeatPassword" placeholder="Confirm password" />
             <span className="register-error"></span>
           </div>
 
