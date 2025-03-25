@@ -33,12 +33,14 @@ body{
   transform: translateX(-50%);
   display: flex;
   gap: 32px;
+ margin-bottom: 10px;
 }
 
 .navbar-link {
   font-size: 20px;
   color: #e2e8f0; 
   text-decoration: none;
+  padding-bottom: 10px;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
