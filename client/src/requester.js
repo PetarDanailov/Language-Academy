@@ -14,6 +14,7 @@ export const request = async(method,url,data,options = {}) => {
 
   }
   try{
+    console.log(options)
     const response = await fetch(url,options);
     const responseContentType = response.headers.get("Content-Type");
     if(!responseContentType || !responseContentType.includes("application/json")){
