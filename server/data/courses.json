@@ -1,80 +1,70 @@
+[
+  {
+    "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+    "title": "Spanish for Beginners",
+    "image": "https://www.lawlessspanish.com/wp-content/uploads/spanish-for-beginners.png",
+    "price": "60",
+    "address": "789 Language Street, Barcelona",
+    "language": "Spanish",
+    "duration": "12",
+    "spaces": "12",
+    "startDate": "2025-03-31",
+    "description": "Spanish is really interesting",
+    "_createdOn": 1742970086896,
+    "_id": "4d9ec7b7-0b23-4446-ba0f-2fcd6b4cc623"
+},
 {
-  "courses": {
-    "course-uuid-1": {
-      "title": "Spanish for Beginners",
-      "language": "Spanish",
-      "duration": "10 weeks",
-      "price": 149.99,
-      "description": "Learn the basics of Spanish, including pronunciation, grammar, and common phrases.",
-      "imageUrl": "https://www.lawlessspanish.com/wp-content/uploads/spanish-for-beginners.png",
-      "startingDate": "2024-05-01T00:00:00Z",
-      "vacantSpaces": 20,
-      "address": "789 Language Street, Barcelona",
-      "reviews": {
-        "review-uuid-3": {
-          "userId": "user-uuid-3",
-          "rating": 5,
-          "reviewDate": "2024-05-15T10:30:00Z",
-          "comment": "Great course! The interactive lessons helped a lot."
-        }
-      }
-    },
-    "course-uuid-2": {
-      "title": "Business English Mastery",
-      "language": "English",
-      "duration": "12 weeks",
-      "price": 199.99,
-      "description": "Enhance your professional English skills for meetings, presentations, and emails.",
-      "imageUrl": "https://m.media-amazon.com/images/I/61-rOlet4DL._AC_UF1000,1000_QL80_.jpg",
-      "startingDate": "2024-06-01T00:00:00Z",
-      "vacantSpaces": 25,
-      "address": "123 Corporate Avenue, London",
-      "reviews": {
-        "review-uuid-4": {
-          "userId": "user-uuid-4",
-          "rating": 4,
-          "reviewDate": "2024-06-10T09:00:00Z",
-          "comment": "Very useful for my job! More role-playing exercises would be great."
-        }
-      }
-    },
-    "course-uuid-3": {
-      "title": "Mandarin Chinese Essentials",
-      "language": "Chinese",
-      "duration": "8 weeks",
-      "price": 179.99,
-      "description": "Learn essential Mandarin Chinese phrases and characters for everyday conversations.",
-      "imageUrl": "https://m.media-amazon.com/images/I/61qSkRjJYuL._AC_UF894,1000_QL80_.jpg",
-      "startingDate": "2024-07-01T00:00:00Z",
-      "vacantSpaces": 18,
-      "address": "456 Culture Square, Beijing",
-      "reviews": {
-        "review-uuid-5": {
-          "userId": "user-uuid-5",
-          "rating": 5,
-          "reviewDate": "2024-07-15T14:45:00Z",
-          "comment": "A fantastic introduction to Mandarin! I can already hold basic conversations."
-        }
-      }
-    },
-    "course-uuid-4": {
-      "title": "French for Travelers",
-      "language": "French",
-      "duration": "6 weeks",
-      "price": 129.99,
-      "description": "Master essential French phrases and cultural tips for travel and tourism.",
-      "imageUrl": "https://m.media-amazon.com/images/I/71PaJ7nCJiL._AC_UF1000,1000_QL80_.jpg",
-      "startingDate": "2024-08-01T00:00:00Z",
-      "vacantSpaces": 15,
-      "address": "101 Rue de Paris, France",
-      "reviews": {
-        "review-uuid-6": {
-          "userId": "user-uuid-6",
-          "rating": 4,
-          "reviewDate": "2024-08-10T11:20:00Z",
-          "comment": "Helpful for my trip to France! Would love more speaking practice."
-        }
-      }
-    }
-  }
+    "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+    "title": "German for Beginners",
+    "image": "https://www.learn-german.com/wp-content/uploads/german-for-beginners.png",
+    "price": "55",
+    "address": "789 Hauptstraße, Berlin",
+    "language": "German",
+    "duration": "14",
+    "spaces": "10",
+    "startDate": "2025-04-15",
+    "description": "Start your German journey with us!",
+    "_createdOn": 1742970286896,
+    "_id": "2b3c4d5e-6f7g-8h9i-0j1a-bcdef1234567"
+}, {
+  "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+  "title": "Italian for Beginners",
+  "image": "https://hhmfest.com/wp-content/uploads/2024/05/xBEiE8yBaWtpRG04QpSAcIfJiW1-800x1200.jpg",
+  "price": "70",
+  "address": "321 Via Roma, Rome",
+  "language": "Italian",
+  "duration": "8",
+  "spaces": "20",
+  "startDate": "2025-04-20",
+  "description": "Immerse yourself in Italian culture and language.",
+  "_createdOn": 1742970386896,
+  "_id": "3c4d5e6f-7g8h-9i0j-1a2b-cdef12345678"
+},{
+  "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+  "title": "Japanese for Beginners",
+  "image": "https://www.chanijapan.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoidHV4bDRhdjg5cTE0YzRvYW5kMDZpb3Q1Nm0xdyIsImRvbWFpbiI6Ind3dy5jaGFuaWphcGFuLmNvbSJ9.Wl11KFQto3wb8b9uihnm-UO5th6Sd5mliwu-LSNxq9k",
+  "price": "80",
+  "address": "159 Sakura Street, Tokyo",
+  "language": "Japanese",
+  "duration": "16",
+  "spaces": "8",
+  "startDate": "2025-04-25",
+  "description": "Master Hiragana and basic conversation skills.",
+  "_createdOn": 1742970486896,
+  "_id": "4d5e6f7g-8h9i-0j1a-2b3c-def123456789"
+},
+{
+  "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+  "title": "Mandarin for Beginners",
+  "image": "https://coursehorse.imgix.net/images/course/7027/main/online%20mandarin.png?auto=format%2Cenhance%2Ccompress&crop=entropy&fit=crop&h=220&ixlib=php-1.2.1&q=90&w=330",
+  "price": "75",
+  "address": "951 Beijing Road, Shanghai",
+  "language": "Mandarin",
+  "duration": "18",
+  "spaces": "10",
+  "startDate": "2025-05-01",
+  "description": "Get started with Chinese tones and characters.",
+  "_createdOn": 1742970586896,
+  "_id": "5e6f7g8h-9i0j-1a2b-3c4d-ef1234567890"
 }
+]

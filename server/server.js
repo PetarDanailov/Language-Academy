@@ -1606,50 +1606,77 @@
     			_id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
     		}
     	},
-    	members: {
-    		"cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-    			status: "member",
-    			_createdOn: 1616236790262,
-    			_updatedOn: 1616236792930
-    		},
-    		"61a19986-3b86-4347-8ca4-8c074ed87591": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237188183,
-    			_updatedOn: 1616237189016
-    		},
-    		"8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-    			status: "member",
-    			_createdOn: 1616237193355,
-    			_updatedOn: 1616237195145
-    		},
-    		"9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237231299,
-    			_updatedOn: 1616237235713
-    		},
-    		"280b4a1a-d0f3-4639-aa54-6d9158365152": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237257265,
-    			_updatedOn: 1616237278248
-    		},
-    		"e797fa57-bf0a-4749-8028-72dba715e5f8": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    			teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-    			status: "member",
-    			_createdOn: 1616237272948,
-    			_updatedOn: 1616237293676
-    		}
-    	}
+    	
+        courses: [
+            {
+              "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+              "title": "Spanish for Beginners",
+              "image": "https://www.lawlessspanish.com/wp-content/uploads/spanish-for-beginners.png",
+              "price": "60",
+              "address": "789 Language Street, Barcelona",
+              "language": "Spanish",
+              "duration": "12",
+              "spaces": "12",
+              "startDate": "2025-03-31",
+              "description": "Spanish is really interesting",
+              "_createdOn": 1742970086896,
+              "_id": "4d9ec7b7-0b23-4446-ba0f-2fcd6b4cc623"
+          },
+          {
+              "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+              "title": "German for Beginners",
+              "image": "https://www.learn-german.com/wp-content/uploads/german-for-beginners.png",
+              "price": "55",
+              "address": "789 Hauptstraße, Berlin",
+              "language": "German",
+              "duration": "14",
+              "spaces": "10",
+              "startDate": "2025-04-15",
+              "description": "Start your German journey with us!",
+              "_createdOn": 1742970286896,
+              "_id": "2b3c4d5e-6f7g-8h9i-0j1a-bcdef1234567"
+          }, {
+            "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+            "title": "Italian for Beginners",
+            "image": "https://hhmfest.com/wp-content/uploads/2024/05/xBEiE8yBaWtpRG04QpSAcIfJiW1-800x1200.jpg",
+            "price": "70",
+            "address": "321 Via Roma, Rome",
+            "language": "Italian",
+            "duration": "8",
+            "spaces": "20",
+            "startDate": "2025-04-20",
+            "description": "Immerse yourself in Italian culture and language.",
+            "_createdOn": 1742970386896,
+            "_id": "3c4d5e6f-7g8h-9i0j-1a2b-cdef12345678"
+          },{
+            "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+            "title": "Japanese for Beginners",
+            "image": "https://www.chanijapan.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoidHV4bDRhdjg5cTE0YzRvYW5kMDZpb3Q1Nm0xdyIsImRvbWFpbiI6Ind3dy5jaGFuaWphcGFuLmNvbSJ9.Wl11KFQto3wb8b9uihnm-UO5th6Sd5mliwu-LSNxq9k",
+            "price": "80",
+            "address": "159 Sakura Street, Tokyo",
+            "language": "Japanese",
+            "duration": "16",
+            "spaces": "8",
+            "startDate": "2025-04-25",
+            "description": "Master Hiragana and basic conversation skills.",
+            "_createdOn": 1742970486896,
+            "_id": "4d5e6f7g-8h9i-0j1a-2b3c-def123456789"
+          },
+          {
+            "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
+            "title": "Mandarin for Beginners",
+            "image": "https://coursehorse.imgix.net/images/course/7027/main/online%20mandarin.png?auto=format%2Cenhance%2Ccompress&crop=entropy&fit=crop&h=220&ixlib=php-1.2.1&q=90&w=330",
+            "price": "75",
+            "address": "951 Beijing Road, Shanghai",
+            "language": "Mandarin",
+            "duration": "18",
+            "spaces": "10",
+            "startDate": "2025-05-01",
+            "description": "Get started with Chinese tones and characters.",
+            "_createdOn": 1742970586896,
+            "_id": "5e6f7g8h-9i0j-1a2b-3c4d-ef1234567890"
+          }
+          ]
     };
     var rules$1 = {
     	users: {

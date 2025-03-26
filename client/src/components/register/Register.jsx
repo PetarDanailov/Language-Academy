@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router";
 import { useRegister } from "../../api/authApi";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 
 export default function Register() {
   const navigate = useNavigate();
   const register = useRegister();
+  const [data,setData] = useState({email:"",firstName:"",lastName:""});
   const {setUser} = useContext(UserContext)
   const registerHandler = async (formData) =>{
     const {email,firstName,lastName,password,repeatPassword} = Object.fromEntries(formData);
       if(!email || !firstName ||!lastName ||!password ||!repeatPassword){
+      setData({email,firstName,lastName})
        return alert("Please fill all the fields");
       }
       if(password !== repeatPassword){
@@ -18,6 +20,7 @@ export default function Register() {
       const username = firstName + " " + lastName;
       try{
         const result = await register(email,password,username);
+        console.log(result)
         setUser(result);
         navigate('/courses')
       }
@@ -41,19 +44,19 @@ export default function Register() {
 
           <div className="containers">
             <label className="register-label">Email</label>
-            <input type="email" className="register-input"  name="email" placeholder="name@example.com" />
+            <input type="email" className="register-input"  name="email" defaultValue={data.email} placeholder="name@example.com" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">First Name</label>
-            <input type="text" className="register-input"  name="firstName" placeholder="First name" />
+            <input type="text" className="register-input"  name="firstName" defaultValue={data.firstName} placeholder="First name" />
             <span className="register-error"></span>
           </div>
 
           <div className="containers">
             <label className="register-label">Last Name</label>
-            <input type="text" className="register-input"  name="lastName" placeholder="Last name" />
+            <input type="text" className="register-input"  name="lastName" defaultValue={data.lastName} placeholder="Last name" />
             <span className="register-error"></span>
           </div>
 

@@ -1,24 +1,29 @@
 import { useNavigate } from "react-router";
 import { useLogin } from "../../api/authApi";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 
 export default function Login(){
   const navigate = useNavigate();
   const login = useLogin();
+  const [email,setEmail] = useState("")
   const {setUser} = useContext(UserContext);
   const loginHandler = async (formData) =>{
     const {email,password} = Object.fromEntries(formData);
     if(!email || !password){
+      setEmail(email)
       return alert("Please fill all the required fields");
     }
     try{
       const result = await login(email,password);
+      if(result === undefined) {
+        throw new Error("Login failed please try again.")
+      }
       setUser(result);
       navigate("/courses")
     }
     catch(err){
-      alert("Login failed please try again.")
+      alert(err.message)
     }
   }
   return(
@@ -38,7 +43,7 @@ export default function Login(){
           <div className="login-error" role="alert"></div>
           <div className="containers">
             <label className="login-label">Email</label>
-            <input type="email" className="login-input" name="email" placeholder="name@example.com" />
+            <input type="email" className="login-input" name="email" defaultValue={email} placeholder="name@example.com" />
             <span className="login-error"></span>
           </div>
           <div className="containers">

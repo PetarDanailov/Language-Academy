@@ -14,16 +14,19 @@ export const request = async(method,url,data,options = {}) => {
 
   }
   try{
-    console.log(options)
     const response = await fetch(url,options);
+    console.log(response)
     const responseContentType = response.headers.get("Content-Type");
     if(!responseContentType || !responseContentType.includes("application/json")){
       return;
+    }
+    if(!response.ok){
+      return undefined
     }
     const result =  await response.json();
     return result;
   }
   catch(err){
-    alert(err);
+    console.log(err)
   }
 }
