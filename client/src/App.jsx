@@ -8,16 +8,13 @@ import Register from './components/register/Register'
 import Login from './components/login/Login'
 import Catalogue from './components/catalog/Catalog'
 import CourseDetails from './components/course-details/CourseDetails'
-import { UserProvider } from './context/UserContext'
+import { UserContext, UserProvider } from './context/UserContext'
 import CourseCreate from './components/admin/course-create/CourseCreate'
 import CoursesActions from './components/admin/course-actions/CoursesActions'
 import CourseEdit from './components/admin/course-actions/course-edit/CourseEdit'
-
-
+import { RoleGuard } from './components/guards/RoleGuard'
 
 function App() {
- 
-
   return (
     <UserProvider>
       <Header/>
@@ -29,9 +26,11 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/courses" element={<Catalogue/>}/>
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
+        <Route element={<RoleGuard/>}>
         <Route path="/admin/courseCreate" element={<CourseCreate/>}/>
         <Route path='/admin/courseActions' element={<CoursesActions/>}/>
         <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
+        </Route>
       </Routes>
       <Footer/>
     </UserProvider>

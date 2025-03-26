@@ -24,7 +24,7 @@ export default function Header(){
       <Link to="/register" className="signup-button">Sign Up</Link>
       <Link to="/login" className="signin-button">Sign In</Link>
       </div>
-      : <div className="welcome-message">Hello {user.username}!</div>
+      : <div className="welcome-message">Hello, {user.username}!</div>
     }
       
     </div>

@@ -1616,7 +1616,7 @@
           {
               "_ownerId": "ef79939c-b982-429b-afff-e5f1c1d43f4a",
               "title": "German for Beginners",
-              "image": "https://www.learn-german.com/wp-content/uploads/german-for-beginners.png",
+              "image": "https://lin-duo.com/landing/img/german_in_30_days_linduo_hd.png",
               "price": "55",
               "address": "789 Hauptstraße, Berlin",
               "language": "German",

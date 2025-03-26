@@ -31,3 +31,10 @@ export const useEditCourse = () => {
   }
   return {editCourse}
 }
+export const useDeleteCourse = () => {
+  const {options} = useToken();
+  const deleteCourse = async (courseId) =>{
+    await request("DELETE", `${baseUrl}/${courseId}`,null,options) 
+  }
+  return {deleteCourse}
+}

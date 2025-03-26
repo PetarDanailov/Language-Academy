@@ -1,13 +1,47 @@
 import { Link} from "react-router";
-import {useCourses } from "../../../api/coursesApi"
-import { useEffect, useState } from "react";
-
+import {useCourses, useDeleteCourse } from "../../../api/coursesApi"
+import { useEffect, useReducer, useState } from "react";
+//TODO Find a way to ease the component
+const actions = {
+  OPEN_MODAL : "open_modal",
+  CLOSE_MODAL: "close_modal",
+}
+const initialState = {
+   showModal: false,
+   selectedCourse: null,
+};
+function reducer(state,action) {
+  switch(action.type) {
+    case actions.OPEN_MODAL: 
+      return {...state,showModal:true, selectedCourse: action.payload};
+    case actions.CLOSE_MODAL: 
+    return {...state,showModal:false, selectedCourse: null};
+    default : 
+      return state
+  }
+}
 export default function CoursesActions(){
   const {getAll} = useCourses();
+  const {deleteCourse} = useDeleteCourse();
   const [courses,setCourses] = useState([]);
+  const [state,dispatch] = useReducer(reducer, initialState);
+
     useEffect(() => {
        getAll().then(setCourses);
     },[])
+  const handleDeleteClick = (course) =>{
+      dispatch({type: actions.OPEN_MODAL, payload: course})
+    };
+    const handleCancel = () => {
+     dispatch({type: actions.CLOSE_MODAL})
+    };
+    const handleConfirmDelete = async () => {
+      if(state.selectedCourse) {
+        await deleteCourse(state.selectedCourse._id);
+        setCourses(courses.filter((course) => course._id  !== state.selectedCourse._id));
+        dispatch({type: "CLOSE_MODAL"});
+      }
+    };
   return(
     <div className="table-container">
       <table className="table">
@@ -45,17 +79,34 @@ export default function CoursesActions(){
                   >
                     Details
                   </Link>
-                  <Link
-                    to={`/admin/delete/${course._id}`}
+                  <button
+                    onClick={() => handleDeleteClick(course)}
                     className="btn btn-delete">
                     Delete
-                  </Link>
+                  </button>
                 </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {state.showModal && state.selectedCourse && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <p>
+              Are you sure you want to delete the course "<strong>{state.selectedCourse.title}</strong>"?
+            </p>
+            <div className="modal-actions">
+              <button onClick={handleConfirmDelete} className="btn btn-delete-confirm">
+                Yes, Delete
+              </button>
+              <button onClick={handleCancel} className="btn btn-cancel">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
