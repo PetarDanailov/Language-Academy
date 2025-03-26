@@ -10,6 +10,7 @@ import Catalogue from './components/catalog/Catalog'
 import CourseDetails from './components/course-details/CourseDetails'
 import { UserProvider } from './context/UserContext'
 import CourseCreate from './components/admin/course-create/CourseCreate'
+import CoursesActions from './components/admin/course-actions/CoursesActions'
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/courses" element={<Catalogue/>}/>
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
         <Route path="/admin/courseCreate" element={<CourseCreate/>}/>
+        <Route path='/admin/courseActions' element={<CoursesActions/>}/>
       </Routes>
       <Footer/>
     </UserProvider>
