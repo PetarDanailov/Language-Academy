@@ -11,7 +11,7 @@ export default function Header(){
 
         
         <div className="navbar-center">
-          {user.role === "Admin" ? <Link to="/admin/courseActions" className="navbar-link">Courses</Link>:
+          {user?.role === "Admin" ? <Link to="/admin/courseActions" className="navbar-link">Courses</Link>:
           <Link to="/courses" className="navbar-link">Courses</Link>
           }
           <Link to="/aboutUs" className="navbar-link">About us</Link>

@@ -34,7 +34,7 @@ export default function CoursesActions(){
               <td >
                 <div>
                   <Link
-                    to={`/courses/${course._id}/edit`}
+                    to={`/admin/${course._id}/edit`}
                     className="btn btn-primary"
                   >
                     Edit
@@ -46,7 +46,7 @@ export default function CoursesActions(){
                     Details
                   </Link>
                   <Link
-                    to={`/delete/${course._id}`}
+                    to={`/admin/delete/${course._id}`}
                     className="btn btn-delete">
                     Delete
                   </Link>

@@ -11,6 +11,7 @@ import CourseDetails from './components/course-details/CourseDetails'
 import { UserProvider } from './context/UserContext'
 import CourseCreate from './components/admin/course-create/CourseCreate'
 import CoursesActions from './components/admin/course-actions/CoursesActions'
+import CourseEdit from './components/admin/course-actions/course-edit/CourseEdit'
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
         <Route path="/admin/courseCreate" element={<CourseCreate/>}/>
         <Route path='/admin/courseActions' element={<CoursesActions/>}/>
+        <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
       </Routes>
       <Footer/>
     </UserProvider>

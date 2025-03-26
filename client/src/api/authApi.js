@@ -4,7 +4,7 @@ const baseUrl = 'http://localhost:3030/users';
 
 export const useRegister = () => {
   const register = async(email,password,username) => {
-    const role = email === "danailovvpetar@gmail.com" ? "Admin" : "Member";
+    const role = "Member";
     const result = await request("POST",`${baseUrl}/register`,{email,password,username,role});
     return result
   }

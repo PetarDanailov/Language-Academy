@@ -20,11 +20,11 @@ export default function Register() {
       const username = firstName + " " + lastName;
       try{
         const result = await register(email,password,username);
-        console.log(result)
         setUser(result);
-        navigate('/courses')
+        navigate('/')
       }
       catch(err){
+        setData({email,firstName,lastName})
         alert("Registration failed please try again.")
       } 
   }

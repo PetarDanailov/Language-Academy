@@ -17,10 +17,12 @@ export default function Login(){
     try{
       const result = await login(email,password);
       if(result === undefined) {
+        setEmail(email)
         throw new Error("Login failed please try again.")
       }
       setUser(result);
-      navigate("/courses")
+      
+      navigate("/")
     }
     catch(err){
       alert(err.message)
