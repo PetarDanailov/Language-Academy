@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLatestCourses } from "../../api/coursesApi";
+import { useNavigate } from "react-router";
 
 export default function Home(){
+  const navigate = useNavigate();
   const {getLatest} = useLatestCourses();
   const [latestCourses, setLatest] = useState([]);
   useEffect(() => {
@@ -20,9 +22,9 @@ export default function Home(){
       {/* Top Courses Section */}
       <section className="courses-section">
         <h2>Our latest courses</h2>
-        <div className="courses-container">
+        <div className="courses-container" >
           {latestCourses.map((course) => (
-            <div key={course._id} className="course-card">
+            <div key={course._id} className="course-card" onClick={() => navigate(`/courses/${course._id}/details`)}>
               <img src={course.image} alt={course.title} className="course-image" />
               <div className="course-info">
                 <h3>{course.title}</h3>
