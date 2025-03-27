@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { Link, useParams } from "react-router"
 import { useCourse } from "../../api/coursesApi";
 
 export default function CourseDetails(){
+  
   const {courseId} = useParams()
   const {getOne} = useCourse();
   const [course,setCourse] = useState({});
@@ -27,6 +28,9 @@ export default function CourseDetails(){
               Start Date: {course.startDate}
             </p>
             <p className="course-description">{course.description}</p>
+          </div>
+          <div className="action-section">
+              <Link className="buy-button" to={`/buy/${courseId}`}>Save a Place</Link>
           </div>
           <div className="comments-section">
            

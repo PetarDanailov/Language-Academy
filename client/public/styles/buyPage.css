@@ -1,0 +1,90 @@
+.buy-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+.buyForm-container {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+}
+
+.buyForm-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.buyForm-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.buyForm-container label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.payment-info {
+  margin: 15px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.buyForm-container button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.buyForm-container button:hover {
+  background-color: #0056b3;
+}
+
+.buyCourse-container {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.buyCourse-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.course-info p{
+  font-size: 20px;
+}
+.buyCourse-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}

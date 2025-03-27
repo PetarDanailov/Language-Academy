@@ -15,6 +15,7 @@ import CourseEdit from './components/admin/course-actions/course-edit/CourseEdit
 import { RoleGuard } from './components/guards/RoleGuard'
 import Unauthorized from './components/unauthorized/Unauthorized'
 import { AuthPagesGuard } from './components/guards/AuthPagesGuard'
+import BuyCourse from './components/buyCourse/BuyCourse'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path='/admin/courseActions' element={<CoursesActions/>}/>
           <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
         </Route>
+        <Route path='/buy/:courseId' element={<BuyCourse/>}/> 
       </Routes>
       <Footer/>
     </UserProvider>
