@@ -3,6 +3,14 @@ import { request } from "../requester"
 
 const baseUrl = "http://localhost:3030/data/courses"
 
+export const useLatestCourses = () => {
+  const query = "?sortBy=_createdOn%20desc&offset=0&pageSize=3"
+  const getLatest = async () => {
+    const result = await request("GET", `${baseUrl}/${query}`)
+    return result
+  }
+  return {getLatest}
+}
 export const useCreateCourse = () => {
   const {options} = useToken()
   const create = async  (gameData) => {

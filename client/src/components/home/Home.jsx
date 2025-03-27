@@ -1,24 +1,12 @@
+import { useEffect, useState } from "react";
+import { useLatestCourses } from "../../api/coursesApi";
+
 export default function Home(){
-  const topCourses = [ // top courses static for now
-    {
-      title: "Advanced English Mastery",
-      language: "English",
-      vacantSpaces: 5,
-      image: "https://breakthruenglishmastery.com/wp-content/uploads/2022/09/Producto-web-English-Mastery-Complete.jpg",
-    },
-    {
-      title: "French for Beginners",
-      language: "French",
-      vacantSpaces: 8,
-      image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668314640i/63289613.jpg",
-    },
-    {
-      title: "Business Spanish Essentials",
-      language: "Spanish",
-      vacantSpaces: 3,
-      image: "https://kodakco.sgp1.digitaloceanspaces.com/blog/wp-content/uploads/2024/07/05170847/FEATURE-IMAGE-1-791x1024.webp",
-    },
-  ];
+  const {getLatest} = useLatestCourses();
+  const [latestCourses, setLatest] = useState([]);
+  useEffect(() => {
+  getLatest().then(setLatest);
+  },[])
   return(
     <div className="home-container">
       {/* Welcome Section */}
@@ -31,15 +19,15 @@ export default function Home(){
 
       {/* Top Courses Section */}
       <section className="courses-section">
-        <h2>Our best courses</h2>
+        <h2>Our latest courses</h2>
         <div className="courses-container">
-          {topCourses.map((course, index) => (
-            <div key={index} className="course-card">
+          {latestCourses.map((course) => (
+            <div key={course._id} className="course-card">
               <img src={course.image} alt={course.title} className="course-image" />
               <div className="course-info">
                 <h3>{course.title}</h3>
                 <p>Language: {course.language}</p>
-                <p><strong>Vacant spaces:</strong> {course.vacantSpaces}</p>
+                <p><strong>Vacant spaces:</strong> {course.spaces}</p>
               </div>
             </div>
           ))}

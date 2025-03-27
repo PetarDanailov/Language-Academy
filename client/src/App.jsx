@@ -13,6 +13,8 @@ import CourseCreate from './components/admin/course-create/CourseCreate'
 import CoursesActions from './components/admin/course-actions/CoursesActions'
 import CourseEdit from './components/admin/course-actions/course-edit/CourseEdit'
 import { RoleGuard } from './components/guards/RoleGuard'
+import Unauthorized from './components/unauthorized/Unauthorized'
+import { AuthPagesGuard } from './components/guards/AuthPagesGuard'
 
 function App() {
   return (
@@ -22,14 +24,17 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/contacts" element={<Contacts/>}/>
         <Route path="/aboutUs" element={<AboutUs/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route element={<AuthPagesGuard/>}>        
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+        </Route>
         <Route path="/courses" element={<Catalogue/>}/>
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
+        <Route path='/unauthorized' element={<Unauthorized/>}/>
         <Route element={<RoleGuard/>}>
-        <Route path="/admin/courseCreate" element={<CourseCreate/>}/>
-        <Route path='/admin/courseActions' element={<CoursesActions/>}/>
-        <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
+          <Route path="/admin/courseCreate" element={<CourseCreate/>}/>
+          <Route path='/admin/courseActions' element={<CoursesActions/>}/>
+          <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
         </Route>
       </Routes>
       <Footer/>
