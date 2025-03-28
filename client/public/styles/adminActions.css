@@ -24,6 +24,7 @@
   vertical-align: middle;
   padding: 10px;
   border-top: 1px solid #dee2e6;
+  font-size: 20px;
 }
 
 .table tbody tr:hover {
@@ -46,7 +47,7 @@
 
 .btn {
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 20px;
   border-radius: 4px;
   text-decoration: none;
   color: #fff;
@@ -62,6 +63,7 @@
 }
 
 .btn-info {
+  margin-left: 5px;
   background-color: #17a2b8;
 }
 
@@ -70,6 +72,7 @@
 }
 
 .btn-delete {
+  margin-left: 5px;
   background-color: #dc3545;
 }
 
