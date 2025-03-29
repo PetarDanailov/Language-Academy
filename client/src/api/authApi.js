@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import useToken from "../hooks/useToken";
 import { request } from "../requester";
+import { UserContext } from "../context/UserContext";
 
 const baseUrl = 'http://localhost:3030/users';
 
@@ -17,4 +20,13 @@ export const useLogin = () => {
   }
   return login
 
+}
+export const useLogoff = () => {
+  const {logout} = useContext(UserContext)
+  const {options} = useToken();
+  const logoff = async () => {
+    await request("GET",`${baseUrl}/logout`,null,options);
+    logout()
+  }
+  return logoff
 }

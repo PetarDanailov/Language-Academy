@@ -2,8 +2,10 @@ import { useNavigate } from "react-router";
 import { useRegister } from "../../api/authApi";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function Register() {
+  const showAlert = useAlert()
   const navigate = useNavigate();
   const register = useRegister();
   const [data,setData] = useState({email:"",firstName:"",lastName:""});
@@ -12,10 +14,10 @@ export default function Register() {
     const {email,firstName,lastName,password,repeatPassword} = Object.fromEntries(formData);
       if(!email || !firstName ||!lastName ||!password ||!repeatPassword){
       setData({email,firstName,lastName})
-       return alert("Please fill all the fields");
+       return showAlert("Warning","Please fill all the required fields","warning");
       }
       if(password !== repeatPassword){
-        return alert("Passwords do no match");
+        return showAlert("Warning","Passwords do no match","warning");
       }
       const username = firstName + " " + lastName;
       try{
@@ -25,7 +27,7 @@ export default function Register() {
       }
       catch(err){
         setData({email,firstName,lastName})
-        alert("Registration failed please try again.")
+        showAlert("Error!","Registration failed please try again.","error")
       } 
   }
   return (

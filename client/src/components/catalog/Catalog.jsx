@@ -16,7 +16,7 @@ export default function Catalogue(){
       {courses &&
         courses.map((course) => (
 
-          <div className="course" key={course.courseId}>
+          <div className="course" key={course._id}>
             {/*TODO Fix image size*/}
             <img src={course.image} alt="Course Image" />
             <h3 className="title">{course.title}</h3>

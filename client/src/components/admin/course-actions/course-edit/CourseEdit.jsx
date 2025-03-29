@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router"
 import { useCourse, useEditCourse } from "../../../../api/coursesApi";
+import useAlert from "../../../../hooks/useAlert";
 
 export default function CourseEdit(){
+  const showAlert = useAlert()
   const navigate = useNavigate();
   const {courseId} = useParams();
   const {editCourse} = useEditCourse();
@@ -25,14 +27,14 @@ export default function CourseEdit(){
       const {title,image,price, address , language , duration, spaces , startDate , description } = Object.fromEntries(formData)
       if(!title || !image || !price || !address || !language || !duration || !spaces || !startDate || !description){
         setData({title,image,price,address,language,duration,description,spaces,startDate})
-        return alert("Please fill out all of the fields");
+        return showAlert("Warning","Please fill out all of the fields", "warning");
       }
       try{
         await editCourse(courseId,{title,image,price, address , language , duration, spaces , startDate , description })
         navigate(`/courses/${courseId}/details`)
       }
       catch(err){
-        alert(err.message)
+        showAlert("Edit failed", err.message, "error")
       }
     } 
   return(

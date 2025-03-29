@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useCreateCourse } from "../../../api/coursesApi"
 import { useNavigate } from "react-router"
+import useAlert from "../../../hooks/useAlert"
 
 export default function(){
+  const showAlert = useAlert();
   const navigate = useNavigate()
   const [formData,setData] = useState({title: "",
     image: "",
@@ -23,10 +25,11 @@ export default function(){
     }
     try{
       await create({title,image,price, address , language , duration, spaces , startDate , description });
+      showAlert("Course created!", "The course was successfully added!", "success")
       navigate("/courses")
     }
     catch(err){
-      alert("Something went wrong please try again!")
+      showAlert("Failed to add the course", "Something went wrong please try again!", "error")
     }
   }
   return(<div className="form-container">

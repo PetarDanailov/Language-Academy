@@ -2,8 +2,10 @@ import { useNavigate } from "react-router";
 import { useLogin } from "../../api/authApi";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function Login(){
+  const showAlert = useAlert();
   const navigate = useNavigate();
   const login = useLogin();
   const [email,setEmail] = useState("")
@@ -12,7 +14,7 @@ export default function Login(){
     const {email,password} = Object.fromEntries(formData);
     if(!email || !password){
       setEmail(email)
-      return alert("Please fill all the required fields");
+      return showAlert("Warning","Please fill all the required fields","warning");
     }
     try{
       const result = await login(email,password);
@@ -25,7 +27,7 @@ export default function Login(){
       navigate("/")
     }
     catch(err){
-      alert(err.message)
+      showAlert("Error", err.message, "error")
     }
   }
   return(

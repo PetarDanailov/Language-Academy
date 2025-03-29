@@ -91,22 +91,26 @@ body{
   color: #1e293b; 
   transform: translateY(-2px);
 }
+.signout-button {
+  margin-top: 10px;
+  background-color: #1e293b; 
+  color: #facc15;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signout-button:hover {
+  background-color: #334155; 
+  transform: translateY(-2px);
+}
 .navbar-icon {
   margin-right: 20px;
   width: 50px;  
   height: auto;
-}
-.welcome-message {
-  margin-top: 10px;
-  color: #fff;                
-  font-size: 20px;
-  font-weight: bold;
-  padding: 8px 16px;          
-  border-radius: 8px;
-  display: inline-block;      
-  text-align: center;
-}
-.welcome-message:hover {
-  background-color: #0056b3;
-  cursor: default;
 }
