@@ -16,6 +16,7 @@ import { RoleGuard } from './components/guards/RoleGuard'
 import Unauthorized from './components/unauthorized/Unauthorized'
 import { AuthPagesGuard } from './components/guards/AuthPagesGuard'
 import BuyCourse from './components/buyCourse/BuyCourse'
+import MyCourses from './components/myCourses/MyCourses'
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
         </Route>
+        <Route path='/buy/:courseId' element={<BuyCourse/>}/> 
         <Route path="/courses" element={<Catalogue/>}/>
+        <Route path="/myCourses" element={<MyCourses/>}/>
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
         <Route path='/unauthorized' element={<Unauthorized/>}/>
         <Route element={<RoleGuard/>}>
@@ -37,7 +40,6 @@ function App() {
           <Route path='/admin/courseActions' element={<CoursesActions/>}/>
           <Route path='/admin/:courseId/edit' element={<CourseEdit/>}/>
         </Route>
-        <Route path='/buy/:courseId' element={<BuyCourse/>}/> 
       </Routes>
       <Footer/>
     </UserProvider>

@@ -1,19 +1,40 @@
 import { useEffect, useState } from "react"
-import { useCourse } from "../../api/coursesApi"
-import { useParams } from "react-router";
+import { useCourse, usePartialUpdateCourse } from "../../api/coursesApi"
+import { useNavigate, useParams } from "react-router";
+import { useBuyCourse } from "../../api/boughtCoursesApi";
+import useAlert from "../../hooks/useAlert";
 
 export default function BuyCourse(){
+  const navigate = useNavigate();
+  const showAlert = useAlert();
   const {courseId} = useParams()
   const {getOne} = useCourse();
+  const {buyCourse} = useBuyCourse();
+  const {updateVacantSpaces} = usePartialUpdateCourse()
   const [course,setCourse] = useState({});
   useEffect(() => {
      getOne(courseId).then(setCourse);
-  },[])
+  },[courseId])
+  const buyFormHandler = async (formData) => {
+    let data = Object.fromEntries(formData);
+    data = {...data, courseId,image: course.image, courseTitle: course.title, courseStartDate: course.startDate, coursePrice:  course.price}
+    try{
+      await buyCourse(data)
+      const latestCourse = await getOne(courseId);
+      await updateVacantSpaces(courseId, { spaces: Number(latestCourse.spaces) - 1});
+      setCourse(latestCourse);
+      showAlert("Congratulations!","You have successfully, secured a spot for this course!","success");
+      navigate("/myCourses");
+    }
+    catch(err){
+      showAlert("Fail!","Failed to finish the operation, please try again!","error");
+    }
+  }
   return(
     <div className="buy-page">
       <div className="buyForm-container">
         <h2>Save a spot</h2>
-        <form >
+        <form action={buyFormHandler}>
           <label htmlFor="name">Name:</label>
           <input
             type="text"

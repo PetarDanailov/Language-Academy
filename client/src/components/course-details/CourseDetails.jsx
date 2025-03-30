@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, useParams } from "react-router"
 import { useCourse } from "../../api/coursesApi";
+import { UserContext } from "../../context/UserContext";
 
 export default function CourseDetails(){
-  
+  const {user} = useContext(UserContext)
   const {courseId} = useParams()
   const {getOne} = useCourse();
   const [course,setCourse] = useState({});
@@ -30,7 +31,7 @@ export default function CourseDetails(){
             <p className="course-description">{course.description}</p>
           </div>
           <div className="action-section">
-              <Link className="buy-button" to={`/buy/${courseId}`}>Save a Place</Link>
+              {user && user.role !== "Admin" ? <Link className="buy-button" to={`/buy/${courseId}`}>Save a Place</Link> :null}
           </div>
           <div className="comments-section">
            

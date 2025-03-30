@@ -46,3 +46,17 @@ export const useDeleteCourse = () => {
   }
   return {deleteCourse}
 }
+export const usePartialUpdateCourse = () => {
+  const {options} = useToken();
+  const customOptions = {
+    ...options,
+    headers: {
+      ...options.headers,
+      "X-Admin": "true",
+    }
+  }
+  const updateVacantSpaces = async(courseId,vacantSpaces) => {
+    await request("PATCH", `${baseUrl}/${courseId}`,vacantSpaces,customOptions) 
+  }
+  return {updateVacantSpaces}
+}
