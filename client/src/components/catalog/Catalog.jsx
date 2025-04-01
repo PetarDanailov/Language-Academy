@@ -15,9 +15,8 @@ export default function Catalogue(){
     <section id="dashboard">
       {courses &&
         courses.map((course) => (
-
-          <div className="course" key={course._id}>
-            {/*TODO Fix image size*/}
+          course.spaces > 0 ?(
+            <div className="course" key={course._id}>
             <img src={course.image} alt="Course Image" />
             <h3 className="title">{course.title}</h3>
             <div className="course-info">
@@ -28,7 +27,10 @@ export default function Catalogue(){
             <Link className="details-btn" to={`/courses/${course._id}/details`}>
               Details
             </Link>
-          </div>
+          </div>)
+          : null
+          
+          
         ))}
     </section>
   </div>

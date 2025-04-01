@@ -9,9 +9,10 @@ export const UserProvider = ({children}) => {
     return storedUser ? JSON.parse(storedUser) : null;
   });
   const logout = async () => {
+    navigate("/")
     setUser(null);
     localStorage.removeItem("user");
-    navigate("/")
+    
   };
   useEffect(() => {
     if(user) {

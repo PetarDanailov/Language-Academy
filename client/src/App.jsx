@@ -17,6 +17,7 @@ import Unauthorized from './components/unauthorized/Unauthorized'
 import { AuthPagesGuard } from './components/guards/AuthPagesGuard'
 import BuyCourse from './components/buyCourse/BuyCourse'
 import MyCourses from './components/myCourses/MyCourses'
+import { LoggedInGuard } from './components/guards/LoggedInGuard'
 
 function App() {
   return (
@@ -30,9 +31,11 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
         </Route>
-        <Route path='/buy/:courseId' element={<BuyCourse/>}/> 
+        <Route element={<LoggedInGuard/>}>
+          <Route path='/checkout/:courseId' element={<BuyCourse/>}/> 
+          <Route path="/myCourses" element={<MyCourses/>}/>
+        </Route>
         <Route path="/courses" element={<Catalogue/>}/>
-        <Route path="/myCourses" element={<MyCourses/>}/>
         <Route path="/courses/:courseId/details" element={<CourseDetails/>}/>
         <Route path='/unauthorized' element={<Unauthorized/>}/>
         <Route element={<RoleGuard/>}>

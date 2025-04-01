@@ -43,7 +43,7 @@ export default function CourseEdit(){
         <p>"Continuous improvement is better than delayed perfection." – Mark Twain</p>
       </div>
 
-      <div className="form-container">
+      <div className="editForm-container">
         <h2 className="edit-course-title">Edit Course</h2>
         <form action={editHandler} className="course-form">
           <label>

@@ -16,6 +16,7 @@ export default function(){
     startDate: "",
     description: "",
   })
+  const minDate = new Date().toISOString().split("T")[0];
   const {create} = useCreateCourse()
   const createCourseHandler = async (createFormData) => {
     const {title,image,price, address , language , duration, spaces , startDate , description } = Object.fromEntries(createFormData)
@@ -72,7 +73,7 @@ export default function(){
 
       <label>
         Start Date:
-        <input type="date" name="startDate" defaultValue={formData.startDate} required />
+        <input type="date" name="startDate" defaultValue={formData.startDate} min={minDate} required />
       </label>
 
       <label>

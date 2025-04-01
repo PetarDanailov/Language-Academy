@@ -1,7 +1,6 @@
 import { Link} from "react-router";
 import {useCourses, useDeleteCourse } from "../../../api/coursesApi"
 import { useEffect, useReducer, useState } from "react";
-//TODO Find a way to ease the component
 const actions = {
   OPEN_MODAL : "open_modal",
   CLOSE_MODAL: "close_modal",

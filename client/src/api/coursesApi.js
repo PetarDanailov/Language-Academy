@@ -56,7 +56,8 @@ export const usePartialUpdateCourse = () => {
     }
   }
   const updateVacantSpaces = async(courseId,vacantSpaces) => {
-    await request("PATCH", `${baseUrl}/${courseId}`,vacantSpaces,customOptions) 
+   const result = await request("PATCH", `${baseUrl}/${courseId}`,vacantSpaces,customOptions) 
+   
   }
   return {updateVacantSpaces}
 }
