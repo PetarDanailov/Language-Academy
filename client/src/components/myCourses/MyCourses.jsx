@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import useToken from "../../hooks/useToken"
 import { useBoughtCourses } from "../../api/boughtCoursesApi";
+import { useNavigate } from "react-router";
 
 export default function MyCourses(){ 
+  const navigate = useNavigate(); 
   const {user} = useToken();
   const {getAll} = useBoughtCourses();
   const [courses,setCourses] = useState([]); 
@@ -12,10 +14,10 @@ export default function MyCourses(){
   return(
     <div className="my-courses-container">
       <h2 className="my-courses-title">My Courses</h2>
-      {courses.length > 0 ? (
+      {courses?.length > 0 ? (
         <div className="courses-grid">
           {courses.map((course) => (
-            <div key={course._id} className="boughtCourse-card">
+            <div key={course._id} className="boughtCourse-card" onClick={() => navigate(`/courses/${course.courseId}/details`)}>
               <img src={course.image} alt={course.courseTitle} className="course-image" />
               <div className="course-details">
                 <h3 className="course-title">{course.courseTitle}</h3>

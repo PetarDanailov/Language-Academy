@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 110px; 
+  margin-top: auto; 
   background-color: #2c3e50 !important;
   color: #ecf0f1;
   padding: 10px 0; 
@@ -20,6 +20,7 @@
   padding-left: 10px;
   flex: 1;
   min-width: 250px;
+  font-size: 17px;
 }
 
   .footer-section h4 {

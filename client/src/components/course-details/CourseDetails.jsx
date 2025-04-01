@@ -11,6 +11,7 @@ export default function CourseDetails(){
   useEffect(() => {
      getOne(courseId).then(setCourse);
   },[])
+  console.log(course)
   return(
     <section id="details">
       <div id="details-wrapper">

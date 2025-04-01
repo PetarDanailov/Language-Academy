@@ -5,6 +5,7 @@ import { useBuyCourse } from "../../api/boughtCoursesApi";
 import useAlert from "../../hooks/useAlert";
 
 export default function BuyCourse(){
+  const [userData,setUserData] = useState({})
   const navigate = useNavigate();
   const showAlert = useAlert();
   const {courseId} = useParams()
@@ -17,6 +18,10 @@ export default function BuyCourse(){
   },[courseId])
   const buyFormHandler = async (formData) => {
     let data = Object.fromEntries(formData);
+    if(!data.name || !data.address || !data.phoneNumber){
+      setUserData({name: data.name,address: data.address, phoneNumber: data.phoneNumber});
+      showAlert("Missing fields","Fill all the fields from the form", "warning")
+    }
     data = {...data, courseId,image: course.image, courseTitle: course.title, courseStartDate: course.startDate, coursePrice:  course.price}
     try{
       await buyCourse(data)

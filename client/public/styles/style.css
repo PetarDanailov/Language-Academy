@@ -14,3 +14,8 @@
 @import "unauthorized.css";
 @import "buyPage.css";
 @import "boughtCourses.css";
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

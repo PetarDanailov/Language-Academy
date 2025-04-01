@@ -13,10 +13,23 @@ export default function Register() {
   const registerHandler = async (formData) =>{
     const {email,firstName,lastName,password,repeatPassword} = Object.fromEntries(formData);
       if(!email || !firstName ||!lastName ||!password ||!repeatPassword){
-      setData({email,firstName,lastName})
+        setData({email,firstName,lastName})
        return showAlert("Warning","Please fill all the required fields","warning");
       }
+      if(firstName.length < 2){
+        setData({email,firstName,lastName})
+        return showAlert("Warning","First name must be more than 1 character","warning");
+      }
+      if(lastName.length < 2){
+        setData({email,firstName,lastName})
+        return showAlert("Warning","Last name must be more than 1 character","warning");
+      }
+      if(password.length < 6){
+        setData({email,firstName,lastName})
+        return showAlert("Warning","Passwords must be more than 5 characters","warning");
+      }
       if(password !== repeatPassword){
+        setData({email,firstName,lastName})
         return showAlert("Warning","Passwords do no match","warning");
       }
       const username = firstName + " " + lastName;
