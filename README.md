@@ -4,8 +4,8 @@ Language-Academy is a React-based web application for managing and enrolling in 
 
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Backend Details](#backend-details)
-- [Frontend Details](#frontend-details)
+- [Backend Details](#backend)
+- [Frontend Details](#frontend)
 - [Admin Credentials](#admin-credentials)
 - [Features](#features)
 ---
