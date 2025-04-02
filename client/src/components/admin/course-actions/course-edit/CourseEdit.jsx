@@ -19,6 +19,7 @@ export default function CourseEdit(){
     startDate: "",
     description: "",
   })
+  const minDate = new Date().toISOString().split("T")[0];
   useEffect(() => {
     getOne(courseId).then(setData)
   },[])
@@ -83,7 +84,7 @@ export default function CourseEdit(){
 
           <label>
             Start Date:
-            <input type="date" name="startDate" defaultValue={data.startDate} required />
+            <input type="date" name="startDate" defaultValue={data.startDate} min={minDate} required />
           </label>
 
           <label>

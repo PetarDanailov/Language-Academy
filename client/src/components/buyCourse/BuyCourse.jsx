@@ -13,7 +13,8 @@ export default function BuyCourse(){
   const {buyCourse} = useBuyCourse();
   const {updateVacantSpaces} = usePartialUpdateCourse()
   const [course,setCourse] = useState({});
-  useEffect(() => {
+  const phoneRegex = /^\+?[0-9\s\-\(\)]{7,15}$/;
+    useEffect(() => {
      getOne(courseId).then(setCourse);
   },[courseId])
   const buyFormHandler = async (formData) => {
@@ -21,6 +22,11 @@ export default function BuyCourse(){
     if(!data.name || !data.address || !data.phoneNumber){
       setUserData({name: data.name,address: data.address, phoneNumber: data.phoneNumber});
       showAlert("Missing fields","Fill all the fields from the form", "warning")
+    }
+    if (!phoneRegex.test(data.phoneNumber)) {
+      setUserData({name: data.name, address: data.address, phoneNumber: data.phoneNumber});
+      showAlert("Invalid Phone Number", "Please enter a valid phone number. It should be in patter similiar to this one: +359 877 182 829 or like this: 0044-20-7946-0958.", "error");
+      return;
     }
     data = {...data, courseId,image: course.image, courseTitle: course.title, courseStartDate: course.startDate, coursePrice:  course.price}
     try{
@@ -45,6 +51,7 @@ export default function BuyCourse(){
             type="text"
             id="name"
             name="name"
+            defaultValue={userData.name}
             required
           />
 
@@ -53,6 +60,7 @@ export default function BuyCourse(){
             type="text"
             id="address"
             name="address"
+            defaultValue={userData.address}
             required
           />
 
@@ -61,6 +69,7 @@ export default function BuyCourse(){
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
+            defaultValue={userData.phoneNumber}
             required
           />
 

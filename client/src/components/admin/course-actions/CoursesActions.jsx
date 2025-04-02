@@ -38,7 +38,7 @@ export default function CoursesActions(){
       if(state.selectedCourse) {
         await deleteCourse(state.selectedCourse._id);
         setCourses(courses.filter((course) => course._id  !== state.selectedCourse._id));
-        dispatch({type: "CLOSE_MODAL"});
+        dispatch({type: actions.CLOSE_MODAL});
       }
     };
   return(
