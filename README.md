@@ -34,18 +34,46 @@ Language-Academy is a React-based web application for managing and enrolling in 
 - A modern web browser
 
 ### Installation
-1.Download the zip file of the project or clone the repo
-2. Open the project in visual studio or your desired IDE
-3. Open terminal inside the project
-4. Type go inside Language-Academy-main and after typing ls you should see folder server and client
-5. Open second terminal window and go inside the server folder, when you are inside server type 
-``` node .\server.js ```
-6. Return to the first terminal and go inside the client folder, when you are inside client type
-``` npm i ``` 
-7. After installing dependencies type in the terminal 
-``` npm run dev ```
-8. Remember to start the server before the client. 
-9. Now everything should be working
+1. **Download the Project**
+   - Download the zip file of the project or clone the repository.
+
+2. **Open the Project**
+   - Open the project in Visual Studio or your desired IDE.
+
+3. **Open Terminal**
+   - Open the terminal inside the project.
+
+4. **Verify Project Structure**
+   - Navigate into `Language-Academy-main` and type `ls` (or `dir` on Windows) to ensure you see the `server` and `client` folders.
+
+5. **Start the Server**
+   - Open a second terminal window.
+   - Navigate into the `server` folder.
+   - Run the command:
+     ```bash
+     node .\server.js
+     ```
+
+6. **Install Client Dependencies**
+   - Return to the first terminal.
+   - Navigate into the `client` folder.
+   - Run the command:
+     ```bash
+     npm i
+     ```
+
+7. **Start the Client**
+   - After installing dependencies, run:
+     ```bash
+     npm run dev
+     ```
+
+8. **Startup Order**
+   - Remember to start the server before starting the client.
+
+9. **Final Check**
+   - Everything should now be working.
+
 
 ## Admin Credentials
 Email: danailovvpetar@gmail.com
